@@ -1,0 +1,93 @@
+[
+    {
+      "id": "1",
+      "title": "Dreadspears",
+      "description": "The bulk of Dark Elf armies, with spears as unwavering as their pride.",
+      "price": 450,
+      "count": 120
+    },
+    {
+      "id": "2",
+      "title": "Bleakswords",
+      "description": "Schooled in slaughter through a lifetime of survival.",
+      "price": 450,
+      "count": 120
+    },
+    {
+      "id": "3",
+      "title": "Har Ganeth Executioners",
+      "description": "In the name of Khaine and with draichs in their hands, furious brutality is brought to the battlefield.",
+      "price": 1200,
+      "count": 100
+    },
+    {
+      "id": "4",
+      "title": "Harpies",
+      "description": "With savage claws and malicious temperament, to rip through enemies with grim delight.",
+      "price": 600,
+      "count": 60
+    },
+    {
+      "id": "5",
+      "title": "Sisters of Slaughter",
+      "description": "The Sisters of Slaughter are creatures of instinct, impossible to predict and unfathomably deadly.",
+      "price": 1100,
+      "count": 100
+    },
+    {
+      "id": "6",
+      "title": "Witch Elves",
+      "description": "Crazed by poisonous concoctions, their dual daggers lacerate and shred for the Bloody-handed God.",
+      "price": 800,
+      "count": 100
+    },
+    {
+      "id": "7",
+      "title": "Black Dragon",
+      "description": "Poison, horns, claws and teeth; a myriad ways to destroy the foe.",
+      "price": 2100,
+      "count": 1
+    },
+    {
+      "id": "8",
+      "title": "War Hydra",
+      "description": "A furious battlefield force; savage in combat and notoriously difficult to kill.",
+      "price": 1650,
+      "count": 1
+    },
+    {
+      "id": "9",
+      "title": "Bloodwrack Medusa",
+      "description": "Stripped of their beauteous forms by the goddess Atharti, Medusae know nothing but pain, torment, regret and anguish.",
+      "price": 1300,
+      "count": 1
+    },
+    {
+      "id": "10",
+      "title": "Black Ark Corsairs",
+      "description": "The cut and thrust of melee is child's play to those trained on tumultuous seas.",
+      "price": 650,
+      "count": 100
+    },
+    {
+      "id": "11",
+      "title": "Feral Manticore",
+      "description": "These incarnations of Khaine strike fear in to all those who stand before them.",
+      "price": 800,
+      "count": 1
+    },
+    {
+      "id": "12",
+      "title": "Kharibdyss",
+      "description": "A loathsome beast of uncharted depths possessing colossal strength and insatiable hunger.",
+      "price": 1700,
+      "count": 1
+    },
+    {
+      "id": "13",
+      "title": "Black Guard of Naggarond",
+      "description": "The Witch King is defended, at halberd-point, from those who would do him harm. Imagine such a thing!",
+      "price": 1300,
+      "count": 100
+    }
+]
