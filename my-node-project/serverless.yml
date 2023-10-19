@@ -1,0 +1,48 @@
+service: my-node-project
+frameworkVersion: "3"
+
+plugins:
+  - serverless-esbuild
+custom:
+  esbuild:
+    platform: node
+    target: node18
+  productsTable: products
+  stocksTable: stocks
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  httpApi:
+    cors: true
+
+functions:
+  getProductsList:
+    handler: functions/getProductsList.default
+    environment:
+      productsTable: ${self:custom.productsTable}
+      stocksTable: ${self:custom.stocksTable}
+    events:
+      - httpApi:
+          path: /products
+          method: get
+
+  getProductById:
+    handler: functions/getProductById.default
+    environment:
+      productsTable: ${self:custom.productsTable}
+      stocksTable: ${self:custom.stocksTable}
+    events:
+      - httpApi:
+          path: /products/{productId}
+          method: get
+  createProduct:
+    handler: functions/createProduct.default
+    environment:
+      productsTable: ${self:custom.productsTable}
+      stocksTable: ${self:custom.stocksTable}
+    events:
+      - httpApi:
+          path: /products
+          method: post
