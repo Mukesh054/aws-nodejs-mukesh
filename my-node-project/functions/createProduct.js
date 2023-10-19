@@ -32,7 +32,7 @@ module.exports.default = async function (event) {
     return {
       statusCode: 400,
       body: {
-        message: "The data in invalid",
+        message: JSON.stringify("The data in invalid"),
       },
     };
   }
@@ -76,7 +76,7 @@ module.exports.default = async function (event) {
     return {
       statusCode: 500,
       body: {
-        message: "Internal error with wrtiting to DB",
+        message: JSON.stringify("Internal error with wrtiting to DB"),
       },
     };
   }
