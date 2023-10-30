@@ -10,13 +10,16 @@
     "remove:dev-stack": "sls remove --stage dev --region us-east-1",
     "remove:prod-stack": "sls remove --stage prod --region us-east-1"
   },
-  "devDependencies": {
+  "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.427.0",
     "@aws-sdk/lib-dynamodb": "^3.427.0",
     "@aws-sdk/util-dynamodb": "^3.427.0",
+    "uuid": "^9.0.1",
+    "@aws-sdk/client-sns": "^3.433.0"
+  },
+  "devDependencies": {
     "esbuild": "^0.19.4",
-    "serverless-esbuild": "^1.48.4",
-    "uuid": "^9.0.1"
+    "serverless-esbuild": "^1.48.4"
   },
   "keywords": [],
   "author": "",
