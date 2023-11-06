@@ -17,6 +17,40 @@ provider:
   httpApi:
     cors: true
 
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - "sns:Publish"
+          Resource: "*"
+
+resources:
+  Resources:
+    catalogItemsQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: catalogItemsQueue
+    createProductTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: createProductTopic
+        Subscription:
+          - Endpoint: mukeshsharma054@gmail.com
+            Protocol: email
+
+    # filteredSubscription:
+    #   Type: AWS::SNS::Subscription
+    #   Properties:
+    #     Endpoint: mukeshsharma241991@gmail.com
+    #     Protocol: email
+    #     FilterPolicyScope: MessageBody
+    #     FilterPolicy:
+    #       price:
+    #         - 800
+    #         - 650
+    #     TopicArn: arn:aws:sns:us-east-1:153596561515:createProductTopic
+
 functions:
   getProductsList:
     handler: functions/getProductsList.default
@@ -46,3 +80,16 @@ functions:
       - httpApi:
           path: /products
           method: post
+  catalogBatchProcess:
+    handler: functions/catalogBatchProcess.default
+    environment:
+      productsTable: ${self:custom.productsTable}
+      stocksTable: ${self:custom.stocksTable}
+      topic: "arn:aws:sns:us-east-1:153596561515:createProductTopic"
+    events:
+      - sqs:
+          batchSize: 5
+          arn:
+            Fn::GetAtt:
+              - catalogItemsQueue
+              - Arn
