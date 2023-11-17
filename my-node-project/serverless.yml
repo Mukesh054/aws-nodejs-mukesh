@@ -24,6 +24,19 @@ provider:
           Action:
             - "sns:Publish"
           Resource: "*"
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource: "*"
+        - Effect: "Allow"
+          Action:
+            - "sns:Publish"
+          Resource: "*"
 
 resources:
   Resources:
@@ -38,19 +51,6 @@ resources:
         Subscription:
           - Endpoint: mukeshsharma054@gmail.com
             Protocol: email
-
-    # filteredSubscription:
-    #   Type: AWS::SNS::Subscription
-    #   Properties:
-    #     Endpoint: mukeshsharma241991@gmail.com
-    #     Protocol: email
-    #     FilterPolicyScope: MessageBody
-    #     FilterPolicy:
-    #       price:
-    #         - 800
-    #         - 650
-    #     TopicArn: arn:aws:sns:us-east-1:153596561515:createProductTopic
-
 functions:
   getProductsList:
     handler: functions/getProductsList.default
